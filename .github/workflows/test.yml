@@ -1,3 +1,5 @@
+name: Test Workflow
+
 on: workflow_dispatch
 
 jobs:
@@ -5,10 +7,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: download swagger file'
+        run: curl ${url} -o /tmp/swagger.json
+        env:
+          url: ${{ secrets.url }}
+
       - name: 'TEST: OWASP OFFAT CICD Scanner'
         uses: dmdhrumilmistry/OFFAT-cicd-test@v0.0.1
         with:
-          file: ${{ secrets.url }}
+          file: /tmp/swagger.json # or ${{ secrets.url }}
           rate_limit: 120
           artifact_retention_days: 1
             
