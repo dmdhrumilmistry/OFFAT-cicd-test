@@ -9,6 +9,6 @@ jobs:
         uses: dmdhrumilmistry/OFFAT-cicd-test@v0.0.1
         with:
           file: ${{ secrets.url }}
-          rate_limit: ${{ secrets.rate_limit }}
-          artifact_retention_days: ${{ secrets.artifact_retention_days }}
+          rate_limit: 120
+          artifact_retention_days: 1
             
