@@ -13,7 +13,8 @@ jobs:
           url: ${{ secrets.url }}
 
       - name: 'TEST: OWASP OFFAT CICD Scanner'
-        uses: dmdhrumilmistry/OFFAT-cicd-test@v0.0.1
+        # uses: dmdhrumilmistry/OFFAT-cicd-test@v0.0.1
+        uses: OWASP/OFFAT@v0.17.2
         with:
           file: /tmp/swagger.json # or ${{ secrets.url }}
           rate_limit: 120
